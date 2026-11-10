@@ -4,18 +4,18 @@
    ============================================================ */
 
 :root {
-  --bg:        #fdf8f5;
-  --bg-blush:  #f7e9e4;
-  --bg-blush-2:#f2ddd6;
+  --bg:        #ffffff;
+  --bg-blush:  #fff1f6;
+  --bg-blush-2:#ffe0eb;
   --surface:   #ffffff;
-  --text:      #322822;
-  --text-soft: #6f6059;
-  --text-faint:#a5968d;
-  --accent:    #c17b6e;
-  --accent-dark:#a35a4d;
-  --accent-soft:#e9c3ba;
-  --line:      #e9dcd4;
-  --line-soft: #f1e7e1;
+  --text:      #241b1e;
+  --text-soft: #6e5c62;
+  --text-faint:#ac98a0;
+  --accent:    #ef5c8a;
+  --accent-dark:#c43a68;
+  --accent-soft:#fbc3d8;
+  --line:      #f6dfe8;
+  --line-soft: #fcedf3;
   --whatsapp:  #3fa772;
 
   --font-head: 'Fraunces', Georgia, 'Times New Roman', serif;
@@ -240,6 +240,11 @@ p.lede {
   align-items: center;
 }
 .hero h1 { font-size: 3rem; margin-bottom: 1.1rem; }
+.hero h1 em, .page-hero h1 em, h2 em {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--accent);
+}
 .hero .actions { display: flex; gap: 14px; margin-top: 2.2rem; flex-wrap: wrap; }
 .hero-stats {
   display: flex;
@@ -357,12 +362,12 @@ p.lede {
 .cta-banner h2 { color: #fff; font-size: 1.9rem; max-width: 480px; }
 .cta-banner p { color: rgba(255,255,255,0.85); margin-top: 0.6rem; }
 .cta-banner .btn-primary { background: #fff; color: var(--accent-dark); }
-.cta-banner .btn-primary:hover { background: #fff4f1; }
+.cta-banner .btn-primary:hover { background: #fff0f5; }
 
 /* ── Footer ──────────────────────────────────────────────── */
 .site-footer {
-  background: #2c2420;
-  color: #e6dcd5;
+  background: #211a1d;
+  color: #e9dce1;
   padding: 64px 0 28px;
 }
 .footer-grid {
@@ -383,7 +388,7 @@ p.lede {
 .footer-grid p, .footer-grid a {
   display: block;
   font-size: 0.86rem;
-  color: #c4b7ae;
+  color: #c7b4bc;
   margin-bottom: 0.6rem;
   transition: color 0.2s ease;
 }
@@ -394,18 +399,18 @@ p.lede {
 .footer-social a {
   width: 36px; height: 36px;
   border-radius: 50%;
-  border: 1px solid #4a3f38;
+  border: 1px solid #40343a;
   display: flex; align-items: center; justify-content: center;
   margin: 0;
 }
 .footer-social a:hover { border-color: var(--accent-soft); background: rgba(255,255,255,0.05); }
 .footer-bottom {
-  border-top: 1px solid #45392f;
+  border-top: 1px solid #3a2e33;
   padding-top: 24px;
   display: flex;
   justify-content: space-between;
   font-size: 0.78rem;
-  color: #a08f84;
+  color: #a4909a;
   flex-wrap: wrap;
   gap: 10px;
 }
@@ -454,8 +459,66 @@ p.lede {
 }
 
 /* ── Service card with icon ──────────────────────────────── */
-.service-card { position: relative; }
-.service-card .tag { margin-bottom: 0; margin-top: 1rem; }
+.service-card { position: relative; padding: 0; overflow: hidden; display: flex; flex-direction: column; }
+.service-card .service-photo {
+  aspect-ratio: 16/10;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+}
+.service-card .service-body { padding: 28px 28px 30px; flex: 1; display: flex; flex-direction: column; }
+.service-card .tag { margin-bottom: 0.9rem; margin-top: 0; align-self: flex-start; }
+.service-card h3 { margin-top: 0; }
+.service-card p { flex: 1; }
+.service-card .service-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 1.4rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--line);
+  flex-wrap: wrap;
+}
+.service-card .service-actions .btn { font-size: 0.78rem; padding: 0.65rem 1.1rem; }
+
+/* ── Steps / process flow ────────────────────────────────── */
+.steps-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  position: relative;
+}
+@media (max-width: 860px) { .steps-row { grid-template-columns: 1fr; gap: 40px; } }
+.step {
+  text-align: center;
+  position: relative;
+}
+.step-num {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-family: var(--font-head);
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.1rem;
+  box-shadow: var(--shadow-sm);
+}
+.step h4 { font-size: 1.02rem; margin-bottom: 0.5rem; }
+.step p { color: var(--text-soft); font-size: 0.88rem; max-width: 260px; margin: 0 auto; }
+.step-connector {
+  position: absolute;
+  top: 26px;
+  left: calc(100% + 2px);
+  width: calc(32px - 4px);
+  border-top: 2px dashed var(--accent-soft);
+  display: none;
+}
+@media (min-width: 861px) {
+  .step-connector { display: block; }
+}
 
 /* ── Booking form ─────────────────────────────────────────── */
 .booking-wrap {
