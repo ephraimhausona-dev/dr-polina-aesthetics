@@ -1,29 +1,35 @@
-# Dr. Polina Aesthetics — Website Redesign
+# Dr. Polina Aesthetics website
 
-A light, calm redesign of the Dr. Polina Aesthetics clinic website. Static HTML/CSS/JS — no build step, no backend required.
+Static site (HTML, CSS, vanilla JS). No build step. Hosted on GitHub Pages from `main`.
 
 ## Pages
 
-- `index.html` — Home
-- `about.html` — About the clinic
-- `services.html` — Treatments & services
-- `booking.html` — Appointment request form (hands off to WhatsApp)
-- `contact.html` — Contact details, locations, hours
+- `index.html` home: layered portrait hero, skin types, concerns, clinic slideshow, facial balancing before and after (drag the line), shop rail, review, community, appointment card
+- `services.html` treatments, facial assessment, lip filler article, booking policy
+- `shop.html` products, bag, WhatsApp checkout
+- `about.html` practice, clinic slideshow, community, journal
+- `booking.html` appointment request that opens WhatsApp
+- `contact.html` both clinics with maps, hours, socials
 
-## Notes for the client
+## Editing the shop
 
-- **Photos**: every photo spot on the site is currently a dashed placeholder box. Drop real photos into the `images/` folder and swap the placeholder `<div class="img-placeholder">` blocks in the HTML for `<img>` tags once you have them.
-- **WhatsApp number**: set to `+264 81 368 8846` (from the current site). Update it in `js/main.js` (`WHATSAPP_NUMBER`) and in every `wa.me` / `tel:` link if it changes.
-- **WhatsApp chat widget**: the floating button bottom-right opens a small quick-reply panel; each option hands off to a real WhatsApp chat with a pre-filled message — no backend needed.
-- **Booking page**: the form doesn't send email — it builds a WhatsApp message from the form fields and opens WhatsApp so the clinic can confirm directly. If you'd rather have bookings land in an inbox or calendar, that would need a small backend or a service like Calendly — happy to wire that in later.
-- **Booking policy text**: the exact deposit / cancellation terms on the booking page are placeholders — confirm the real policy and update `booking.html`.
-- **Facebook / TikTok links**: left as `#` placeholders in the footer and contact page since the exact handles weren't confirmed — update once you have the URLs.
-- **Colors**: warm white, soft blush/rose, and charcoal text — no purple, no gradients.
+Everything lives in `js/products.js`: name, price (N$), stock (`in`, `order`, `out`), packaging text, and images.
+At checkout the bag opens WhatsApp (+264 81 36 888 46) with every product, quantity, unit price, line total, total,
+name and collection or delivery choice already written.
 
-## Local preview
+## Content sources
 
-Just open `index.html` in a browser, or serve the folder with any static file server.
+All copy, prices, addresses, hours, policy text and photos come from drpolinaaesthetics.com (home, services, shop,
+product pages, blog). The hero portrait is a local cutout of the studio photo on that site.
+No statistics or claims were invented. Visible text contains no hyphens or dashes.
 
-## Deployment
+## Structure
 
-Hosted via GitHub Pages from the `main` branch.
+- `css/scrollcraft.css`, `js/scrollcraft.js` scroll engine (scroll-craft skill, unmodified)
+- `css/site.css` the design: black, light grey, one blush accent; Archivo and Geist
+- `js/site.js` menu, folio, bag and checkout, slideshows, booking form, balance line
+- `scrollcraft/` design brief and build registry
+
+## Preview locally
+
+Serve the folder with any static server, for example `npx serve .`, then open the printed URL.
