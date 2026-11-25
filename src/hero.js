@@ -14,13 +14,32 @@ import {
   MeshBasicMaterial, MeshPhysicalMaterial, TextureLoader, SRGBColorSpace, Color,
   PMREMGenerator, ACESFilmicToneMapping, Vector2, Vector3, Raycaster, Points,
   BufferGeometry, Float32BufferAttribute, PointsMaterial, AdditiveBlending,
-  ShaderMaterial, Sphere, DirectionalLight, PointLight, CanvasTexture
+  ShaderMaterial, Sphere, DirectionalLight, PointLight, CanvasTexture, EquirectangularReflectionMapping
 } from "three";
-import { RoomEnvironment } from "three/examples/jsm/environments/RoomEnvironment.js";
 
 const stage = document.querySelector("[data-hero]");
 const canvas = stage && stage.querySelector("[data-gl]");
-if (canvas) start();
+const PORTRAIT_FIRST = canvas && innerWidth / innerHeight < 1;
+function boot() {
+  if (!canvas) return;
+  // fetch the photographs straight away so they are cached by the time the scene is built
+  ["images/portrait-cut.webp"].concat(PHOTO_SRC(PORTRAIT_FIRST)).forEach((src) => { const i = new Image(); i.decoding = "async"; i.src = src; });
+  // build the WebGL scene after the page is up, so the poster and buttons respond immediately
+  const go = () => requestAnimationFrame(() => setTimeout(start, 30));
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", go); else go();
+}
+function PHOTO_SRC(mob) { return PHOTOS_ALL.filter((p) => (mob ? p.m : p.d)).map((p) => p.src); }
+
+// a small painted studio for reflections: much cheaper than rendering a room
+function envTexture() {
+  const c = document.createElement("canvas"); c.width = 256; c.height = 128; const g = c.getContext("2d");
+  const bg = g.createLinearGradient(0, 0, 0, 128); bg.addColorStop(0, "#3b3337"); bg.addColorStop(0.5, "#151314"); bg.addColorStop(1, "#060606");
+  g.fillStyle = bg; g.fillRect(0, 0, 256, 128);
+  const box = (x, y, w, h, col, blur) => { g.filter = "blur(" + blur + "px)"; g.fillStyle = col; g.fillRect(x, y, w, h); };
+  box(28, 26, 48, 30, "#ffffff", 4); box(148, 20, 72, 18, "#fff3f5", 5); box(204, 66, 28, 42, "#f3c7d1", 8); box(96, 92, 64, 10, "#b9b9b9", 6);
+  g.filter = "none";
+  const t = new CanvasTexture(c); t.mapping = EquirectangularReflectionMapping; t.colorSpace = SRGBColorSpace; return t;
+}
 
 function webglOK() {
   try { const c = document.createElement("canvas"); return !!(c.getContext("webgl2") || c.getContext("webgl")); }
@@ -85,6 +104,15 @@ float disp(vec3 n){
 }
 `;
 
+const PHOTOS_ALL = [
+    { src: "images/clinic-shelves.webp", d: { n: [-0.8, 0.46], z: 5.6, h: 0.5, r: 0.22 }, m: { n: [-0.76, -0.22], z: 5.4, h: 0.55, r: 0.2 } },
+    { src: "images/clinic-treatment.webp", d: { n: [0.86, -0.42], z: 6.4, h: 0.48, r: -0.26 }, m: { n: [0.76, -0.42], z: 6.2, h: 0.5, r: -0.24 } },
+    { src: "images/clinic-room.webp", d: { n: [0.6, 0.5], z: 4.2, h: 0.66, r: -0.18 }, m: { n: [0.74, -0.08], z: 3.6, h: 0.7, r: -0.2 } },
+    { src: "images/skin-treatment.webp", d: { n: [-0.36, 0.6], z: 3.2, h: 0.4, r: 0.2 }, m: null },
+    { src: "images/clinic-reception.webp", d: { n: [0.94, 0.08], z: 1.2, h: 0.95, r: -0.3 }, m: { n: [-0.66, -0.6], z: 1.0, h: 1.1, r: 0.3 } },
+    { src: "images/clinic-desk.webp", d: { n: [-0.58, 0.3], z: -1.6, h: 1.25, r: 0.34 }, m: null }
+];
+
 function start() {
   if (!webglOK()) { stage.classList.add("is-static"); return; }
   const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -100,7 +128,7 @@ function start() {
 
   const scene = new Scene();
   const pm = new PMREMGenerator(renderer);
-  scene.environment = pm.fromScene(new RoomEnvironment(), 0.04).texture;
+  scene.environment = pm.fromEquirectangular(envTexture()).texture;
   pm.dispose();
 
   const camera = new PerspectiveCamera(35, 1, 0.1, 60);
@@ -169,14 +197,8 @@ function start() {
   const loader = new TextureLoader();
   const load = (src) => loader.loadAsync(src).then((t) => { t.colorSpace = SRGBColorSpace; t.anisotropy = 4; return t; });
 
-  const PHOTOS = [
-    { src: "images/clinic-shelves.webp", d: { n: [-0.8, 0.46], z: 5.6, h: 0.5, r: 0.22 }, m: { n: [-0.76, -0.22], z: 5.4, h: 0.55, r: 0.2 } },
-    { src: "images/clinic-treatment.webp", d: { n: [0.86, -0.42], z: 6.4, h: 0.48, r: -0.26 }, m: { n: [0.76, -0.42], z: 6.2, h: 0.5, r: -0.24 } },
-    { src: "images/clinic-room.webp", d: { n: [0.6, 0.5], z: 4.2, h: 0.66, r: -0.18 }, m: { n: [0.74, -0.08], z: 3.6, h: 0.7, r: -0.2 } },
-    { src: "images/skin-treatment.webp", d: { n: [-0.36, 0.6], z: 3.2, h: 0.4, r: 0.2 }, m: null },
-    { src: "images/clinic-reception.webp", d: { n: [0.94, 0.08], z: 1.2, h: 0.95, r: -0.3 }, m: { n: [-0.66, -0.6], z: 1.0, h: 1.1, r: 0.3 } },
-    { src: "images/clinic-desk.webp", d: { n: [-0.58, 0.3], z: -1.6, h: 1.25, r: 0.34 }, m: null }
-  ];
+  const mobStart = innerWidth / innerHeight < 1;
+  const PHOTOS = PHOTOS_ALL.filter((p) => (mobStart ? p.m : p.d));
 
   let her = null; const photos = [];
   let quality = 1, slowFrames = 0, sampled = 0;
@@ -334,8 +356,9 @@ function start() {
       photos.push({ mesh: m, spec, aspect: t.image.width / t.image.height });
     });
     layout();
-    renderer.compile(scene, camera);
-    loop();
-    requestAnimationFrame(() => stage.classList.add("is-gl"));
+    const done = () => { loop(); requestAnimationFrame(() => stage.classList.add("is-gl")); };
+    if (renderer.compileAsync) renderer.compileAsync(scene, camera).then(done, done); else { renderer.compile(scene, camera); done(); }
   }).catch(() => stage.classList.add("is-static"));
 }
+
+boot();
