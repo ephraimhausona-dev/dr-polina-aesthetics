@@ -1,127 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Booking | Dr. Polina Aesthetics</title>
-<meta name="description" content="Request an appointment at Dr. Polina Aesthetics in Windhoek or Oshikango. Your request opens in WhatsApp, ready to send.">
-<meta name="theme-color" content="#e4e3e0">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='3' fill='%230e0e0f'/><text x='16' y='23' text-anchor='middle' font-family='Arial' font-weight='700' font-size='19' fill='%23f2c5cf'>P</text></svg>">
+<meta name="description" content="Request an appointment at Dr. Polina Aesthetics in Windhoek or Oshikango. WhatsApp opens with your request written out.">
+<meta name="theme-color" content="#e7e6e3">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='16' fill='%230c0c0d'/><text x='16' y='23' text-anchor='middle' font-family='Didot,Georgia,serif' font-style='italic' font-size='20' fill='%23f3c7d1'>P</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Geist:wght@300..600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/scrollcraft.css">
-<link rel="stylesheet" href="css/site.css">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Hanken+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+<script>!function(d){d.classList.add("js");try{var s=sessionStorage;if(s.getItem("dpa.t"))d.classList.add("is-entering");s.removeItem("dpa.t");s.setItem("dpa.seen","1")}catch(e){}}(document.documentElement)</script>
 </head>
-<body data-page="booking" class="g-light">
+<body data-page="booking">
 <a class="skip" href="#main">Skip to content</a>
-<div class="sc-grain" aria-hidden="true"></div>
 
-<header class="rail">
-  <a class="rail__mark" href="index.html" aria-label="Dr. Polina Aesthetics, home">Dr. Polina <span>Aesthetics</span></a>
-  <button class="menu-btn" type="button" data-menu-open aria-controls="menu" aria-expanded="false"><i></i><i></i><span>Menu</span></button>
-  <p class="rail__folio" aria-hidden="true"><b data-folio-out>Booking</b></p>
+<header class="hdr" data-hdr>
+  <button class="hdr__menu" type="button" data-menu-open aria-expanded="false" aria-controls="menu"><span class="hdr__lines" aria-hidden="true"><i></i><i></i></span><span>Menu</span></button>
+  <a class="hdr__logo" href="index.html" aria-label="Dr. Polina Aesthetics, home"><em>Dr. Polina</em><span>Aesthetics</span></a>
+  <div class="hdr__right">
+    <button class="hdr__bag" type="button" data-bag-open><span class="hdr__bag-label">Bag</span><span data-bag-count>0</span></button>
+    <a class="pill" href="booking.html" data-magnet>Book</a>
+  </div>
 </header>
-<div class="topright">
-  <button class="bag-btn" type="button" data-bag-open aria-label="Open your bag">Bag <span class="bag-count" data-bag-count>0</span></button>
-</div>
 
 <main id="main">
-  <section class="g-light" data-folio="Booking">
-    <div class="wrap title" style="min-height:58svh">
-      <p class="label label--soft" data-sc-in>Book now</p>
-      <h1 class="display d-xxl" data-sc-in style="margin-top:1.4rem">Booking.</h1>
-      <div class="title__row" data-sc-in>
-        <p class="lede">Choose your clinic and treatment. WhatsApp opens with your request written out, and the team confirms your time there.</p>
+  <section class="phead" data-theme="light" style="padding-bottom:clamp(30px,5vh,60px)">
+    <div>
+      <p class="eyebrow">Booking</p>
+      <h1 class="h1" data-split>Book<em>ing.</em></h1>
+      <p class="lede" data-reveal>Choose your clinic and treatment. WhatsApp opens with your request written out, and the team confirms your time there.</p>
+    </div>
+  </section>
+
+  <section class="sec" data-theme="light" style="padding-top:0">
+    <div class="bookwrap">
+      <form class="bookform" data-consult data-card="apcard" novalidate>
+        <div class="row">
+          <div class="field" data-req><label for="b-name">Full name</label><input id="b-name" name="name" autocomplete="name"><span class="field__err">Please add your name.</span></div>
+          <div class="field" data-req><label for="b-phone">Phone number</label><input id="b-phone" name="phone" type="tel" autocomplete="tel"><span class="field__err">Please add a number we can reach you on.</span></div>
+        </div>
+        <fieldset class="fs"><legend>Clinic</legend><div class="chips">
+          <label class="chip"><input type="radio" name="clinic" value="Windhoek, No. 4 Feld Street, Ausspannplatz" checked><span>Windhoek</span></label>
+          <label class="chip"><input type="radio" name="clinic" value="Oshikango, Freedom Square, Shop B3"><span>Oshikango</span></label>
+        </div></fieldset>
+        <fieldset class="fs"><legend>Skin type (if you know it)</legend><div class="chips">
+          <label class="chip"><input type="radio" name="skin" value="Dry"><span>Dry</span></label>
+          <label class="chip"><input type="radio" name="skin" value="Normal"><span>Normal</span></label>
+          <label class="chip"><input type="radio" name="skin" value="Oily"><span>Oily</span></label>
+          <label class="chip"><input type="radio" name="skin" value="Sensitive"><span>Sensitive</span></label>
+          <label class="chip"><input type="radio" name="skin" value="Not sure"><span>Not sure</span></label>
+        </div></fieldset>
+        <div class="field"><label for="b-concern">Treatment</label><select id="b-concern" name="concern"><option>Facial assessment for facial balancing</option><option>Botox</option><option>Dermal fillers</option><option>Lip filler</option><option>Thread lifting</option><option>Chin enhancement</option><option>Smile lines</option><option>Under eye correction</option><option>Skin consultation</option><option>Acne</option><option>Rosacea</option><option>Premature ageing</option><option>Sun damage and pigmentation</option><option>Pigmentation</option><option>Extraction and exfoliation</option><option>Medical grade skincare</option><option>Hair or body treatment</option><option>Not sure yet, please advise</option></select></div>
+        <div class="row">
+          <div class="field"><label for="b-date">Preferred date</label><input id="b-date" name="date" type="date"></div>
+          <div class="field"><label for="b-time">Preferred time</label><select id="b-time" name="time"><option value="">No preference</option><option>Morning, 09:00 to 12:00</option><option>Afternoon, 12:00 to 15:00</option><option>Late afternoon, 15:00 to 18:00</option></select></div>
+        </div>
+        <div class="field"><label for="b-notes">Anything we should know? (optional)</label><textarea id="b-notes" name="notes"></textarea></div>
+        <div><button class="pill pill--ink" type="submit" data-magnet>Send request on WhatsApp</button></div>
+        <p class="confirm" data-confirm role="status">WhatsApp should now be open with your request. If nothing opened, allow pop ups for this site or message us directly on <a href="https://wa.me/264813688846" style="text-decoration:underline">+264 81 36 888 46</a>.</p>
+      </form>
+      <div class="consult__side">
+        <div class="apcard" data-tilt="6" id="apcard" aria-hidden="true">
+          <div class="apcard__in">
+            <div class="apcard__top"><em>Dr. Polina</em><span>Appointment<br>request</span></div>
+            <dl>
+              <div><dt>Name</dt><dd data-k="name" data-empty="Your name"></dd></div>
+              <div><dt>Clinic</dt><dd data-k="clinic" data-empty="Choose a clinic"></dd></div>
+              <div><dt>Skin type</dt><dd data-k="skin" data-empty="Dry, normal, oily or sensitive"></dd></div>
+              <div><dt>For</dt><dd data-k="concern" data-empty="What brings you in"></dd></div>
+              <div><dt>When</dt><dd data-k="date,time" data-empty="Any day, any time"></dd></div>
+            </dl>
+            <span class="apcard__seal">Skin<br>Hair<br>Body</span>
+            <div class="apcard__foot"><p>Monday to Saturday, 09:00 to 18:00. Sunday closed.</p></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="g-light section--tight" style="padding-top:0">
-    <div class="wrap book">
-      <form id="booking-form" novalidate data-sc-in data-sc-stagger="50">
-        <div class="grid-2">
-          <div class="field" data-f="name"><label for="name">Full name</label><input id="name" name="name" autocomplete="name" required><span class="field__err">Please add your name.</span></div>
-          <div class="field" data-f="phone"><label for="phone">Phone number</label><input id="phone" name="phone" type="tel" autocomplete="tel" required><span class="field__err">Please add a number we can reach you on.</span></div>
-        </div>
-        <div class="field">
-          <label for="location">Clinic</label>
-          <select id="location" name="location">
-            <option value="Windhoek, No. 4 Feld Street, Ausspannplatz">Windhoek, No. 4 Feld Street, Ausspannplatz</option>
-            <option value="Oshikango, Freedom Square, Shop B3, First Floor">Oshikango, Freedom Square, Shop B3</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="service">Treatment</label>
-          <select id="service" name="service">
-            <optgroup label="Facial balancing">
-              <option>Facial assessment for facial balancing</option>
-              <option>Botox</option>
-              <option>Dermal fillers</option>
-              <option>Lip filler</option>
-              <option>Thread lifting</option>
-              <option>Chin enhancement</option>
-              <option>Smile lines</option>
-              <option>Under eye correction</option>
-            </optgroup>
-            <optgroup label="Skin">
-              <option>Skin consultation</option>
-              <option>Acne</option>
-              <option>Rosacea</option>
-              <option>Premature ageing</option>
-              <option>Sun damage and pigmentation</option>
-              <option>Extraction and exfoliation</option>
-            </optgroup>
-            <optgroup label="Other">
-              <option>Hair or body treatment</option>
-              <option>Not sure yet, please advise</option>
-            </optgroup>
-          </select>
-        </div>
-        <div class="grid-2">
-          <div class="field"><label for="date">Preferred date</label><input id="date" name="date" type="date"></div>
-          <div class="field">
-            <label for="time">Preferred time</label>
-            <select id="time" name="time">
-              <option value="">No preference</option>
-              <option>Morning, 09:00 to 12:00</option>
-              <option>Afternoon, 12:00 to 15:00</option>
-              <option>Late afternoon, 15:00 to 18:00</option>
-            </select>
-          </div>
-        </div>
-        <div class="field"><label for="notes">Anything we should know? (optional)</label><textarea id="notes" name="notes"></textarea></div>
-        <button class="btn btn--ink btn--block" type="submit">Send request on WhatsApp</button>
-        <div class="confirm" id="booking-confirm" role="status">WhatsApp should now be open with your request. If nothing opened, allow pop ups for this site or message us directly on <a href="https://wa.me/264813688846" target="_blank" rel="noopener">+264 81 36 888 46</a>.</div>
-      </form>
-
-      <aside class="book__aside" data-sc-in data-sc-stagger="60">
-        <h2 class="display d-md">Booking policy</h2>
-        <ul class="bullets">
-          <li><strong>Payment.</strong> Full payment is due right after your booking is approved by email.</li>
-          <li><strong>Methods.</strong> Bank deposit, EFT, card swipe and cash. Pay2cell, eWallet, Easywallet and Blue Wallet are not accepted.</li>
-          <li><strong>Changes.</strong> Cancel or reschedule at least one day before. Late cancellations and no shows pay the full service price.</li>
-        </ul>
-        <p class="prose" style="margin-top:1.6rem">Monday to Saturday, 09:00 to 18:00. Sunday closed.</p>
-      </aside>
+  <section class="sec" data-theme="light" style="background:var(--paper-2)">
+    <div class="sec__head"><h2 class="h2" data-split>Booking <em>policy.</em></h2><p data-reveal>Monday to Saturday, 09:00 to 18:00. Sunday closed.</p></div>
+    <div class="policy">
+      <article data-reveal><p class="eyebrow">Payment</p><h3>Paid in full on approval</h3><p>Full payment is due right after your booking is approved by email.</p></article>
+      <article data-reveal style="--d:100ms"><p class="eyebrow">Methods</p><h3>Deposit, EFT, card or cash</h3><p>We accept bank deposit, EFT, card swipe and cash. We do not accept Pay2cell, eWallet, Easywallet or Blue Wallet.</p></article>
+      <article data-reveal style="--d:200ms"><p class="eyebrow">Changes</p><h3>One day&rsquo;s notice</h3><p>Cancel or reschedule at least one day before your appointment. Late cancellations and no shows pay the full service price.</p></article>
     </div>
   </section>
-
-  <footer class="g-dark">
-    <div class="foot foot--page">
-      <span>&copy; <span data-year>2026</span> Dr. Polina Aesthetics</span>
-      <nav aria-label="Footer">
-        <a href="index.html">Home</a><a href="services.html">Treatments</a><a href="shop.html">Shop</a><a href="contact.html">Contact</a>
-        <a href="https://www.instagram.com/drpolina_aesthetics/" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://www.facebook.com/drp.medspa" target="_blank" rel="noopener">Facebook</a>
-        <a href="https://www.tiktok.com/@drpolina_aesthetics" target="_blank" rel="noopener">TikTok</a>
-      </nav>
-    </div>
-  </footer>
 </main>
 
+<footer class="foot" data-theme="dark">
+  <div class="foot__cta">
+    <h2 class="h2" data-split>Rather just<br><em>talk to us?</em></h2>
+    <div style="display:flex;gap:14px;flex-wrap:wrap">
+      <a class="pill pill--blush" href="booking.html" data-magnet>Book now</a>
+      <a class="pill" href="https://wa.me/264813688846" target="_blank" rel="noopener" data-magnet>WhatsApp</a>
+    </div>
+  </div>
+  <div class="foot__grid">
+    <div><p class="eyebrow">Windhoek</p><p>No. 4 Feld Street<br>Ausspannplatz, Windhoek</p></div>
+    <div><p class="eyebrow">Oshikango</p><p>Freedom Square, Shop B3<br>First Floor, opposite Standard Bank</p></div>
+    <div><p class="eyebrow">Hours</p><p>Monday to Saturday<br>09:00 to 18:00. Sunday closed.</p><p style="margin-top:8px"><a href="tel:+264813688846">+264 81 36 888 46</a></p></div>
+    <div><p class="eyebrow">Explore</p><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Treatments</a></li><li><a href="shop.html">Shop</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="https://www.instagram.com/drpolina_aesthetics/" target="_blank" rel="noopener">Instagram</a> &middot; <a href="https://www.facebook.com/drp.medspa" target="_blank" rel="noopener">Facebook</a> &middot; <a href="https://www.tiktok.com/@drpolina_aesthetics" target="_blank" rel="noopener">TikTok</a></li></ul></div>
+  </div>
+  <p class="foot__mark" data-mark aria-hidden="true">Dr. Polina</p>
+  <div class="foot__base"><span>&copy; <span data-year>2026</span> Dr. Polina Aesthetics</span><span>Skin &middot; Hair &middot; Body</span></div>
+</footer>
+
+
 <script src="js/products.js"></script>
-<script src="js/scrollcraft.js"></script>
-<script src="js/site.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>

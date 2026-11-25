@@ -1,240 +1,267 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-intro>
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Dr. Polina Aesthetics | Skin, hair and body clinic in Windhoek and Oshikango</title>
-<meta name="description" content="Dr. Polina Aesthetics is a medical aesthetic center in Windhoek and Oshikango that tailors skin, hair and body treatments to each client. Let's take the complexity out of caring for your skin.">
-<meta name="theme-color" content="#0e0e0f">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='3' fill='%230e0e0f'/><text x='16' y='23' text-anchor='middle' font-family='Arial' font-weight='700' font-size='19' fill='%23f2c5cf'>P</text></svg>">
+<meta name="description" content="Dr. Polina Aesthetics is a medical aesthetic center in Windhoek and Oshikango that tailors skin, hair and body treatments to the individual needs of each client.">
+<meta name="theme-color" content="#0c0c0d">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='16' fill='%230c0c0d'/><text x='16' y='23' text-anchor='middle' font-family='Didot,Georgia,serif' font-style='italic' font-size='20' fill='%23f3c7d1'>P</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Geist:wght@300..600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Hanken+Grotesk:wght@300..700&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="images/portrait-cut.webp">
-<link rel="stylesheet" href="css/scrollcraft.css">
-<link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="css/main.css">
+<script>!function(d){d.classList.add("js");try{var s=sessionStorage;if(s.getItem("dpa.t")||(d.hasAttribute("data-intro")&&!s.getItem("dpa.seen")))d.classList.add("is-entering");s.removeItem("dpa.t");s.setItem("dpa.seen","1")}catch(e){}}(document.documentElement)</script>
 </head>
 <body data-page="home">
 <a class="skip" href="#main">Skip to content</a>
-<div class="sc-grain" aria-hidden="true"></div>
 
-<header class="rail">
-  <a class="rail__mark" href="index.html" aria-label="Dr. Polina Aesthetics, home">Dr. Polina <span>Aesthetics</span></a>
-  <button class="menu-btn" type="button" data-menu-open aria-controls="menu" aria-expanded="false"><i></i><i></i><span>Menu</span></button>
-  <p class="rail__folio" aria-hidden="true"><b data-folio-out>Welcome</b></p>
+<header class="hdr is-dark" data-hdr>
+  <button class="hdr__menu" type="button" data-menu-open aria-expanded="false" aria-controls="menu"><span class="hdr__lines" aria-hidden="true"><i></i><i></i></span><span>Menu</span></button>
+  <a class="hdr__logo" href="index.html" aria-label="Dr. Polina Aesthetics, home"><em>Dr. Polina</em><span>Aesthetics</span></a>
+  <div class="hdr__right">
+    <button class="hdr__bag" type="button" data-bag-open><span class="hdr__bag-label">Bag</span><span data-bag-count>0</span></button>
+    <a class="pill" href="booking.html" data-magnet>Book</a>
+  </div>
 </header>
-<div class="topright">
-  <button class="bag-btn" type="button" data-bag-open aria-label="Open your bag">Bag <span class="bag-count" data-bag-count>0</span></button>
-  <a class="btn" href="booking.html">Book now</a>
-</div>
 
 <main id="main">
 
-  <!-- 1 PRESENCE: she stands in front of her own name -->
-  <section class="hero" data-sc-act="pin" data-sc-span="1.9" data-folio="Welcome">
-    <div data-sc-stage>
-      <p class="hero__name" aria-hidden="true">POLINA</p>
-      <figure class="hero__frame"><img src="images/clinic-shelves.webp" alt=""></figure>
-      <figure class="hero__frame hero__frame--b"><img src="images/clinic-room.webp" alt=""></figure>
-      <img class="hero__her" src="images/portrait-cut.webp" width="1200" height="1803" alt="Portrait from the Dr. Polina Aesthetics studio shoot">
-      <div class="hero__floor" aria-hidden="true"></div>
-      <div class="hero__copy" data-sc-cue="0 0.82 0">
-        <p class="label">Welcome to Dr. Polina Aesthetics</p>
-        <h1 class="display">Let&rsquo;s take the complexity out of caring for your skin.</h1>
-        <a class="btn" href="booking.html">Book now</a>
-      </div>
-      <div class="hero__aside" data-sc-cue="0.34">
-        <p class="label">Skin &middot; Hair &middot; Body</p>
-        <p>A medical aesthetic center in Windhoek and Oshikango, tailoring every treatment to the person in the chair.</p>
-      </div>
-    </div>
-  </section>
+  <!-- 1. The drop -->
+  <section class="hero" data-hero data-theme="dark" aria-label="Welcome">
+    <div class="hero__stage">
+      <div class="hero__poster" aria-hidden="true"><img src="images/portrait-cut.webp" alt=""><i></i></div>
+      <canvas class="hero__gl" data-gl aria-hidden="true"></canvas>
+      <div class="hero__shade" aria-hidden="true"></div>
 
-  <!-- 2 RECOGNITION: your skin type, named plainly -->
-  <section class="g-light section" data-folio="Your skin">
-    <div class="wrap skin">
-      <div data-sc-in data-sc-stagger="70">
-        <p class="label label--soft">About us</p>
-        <h2 class="display d-xl" style="margin-top:1.5rem">Treatments tailored to your skin type.</h2>
-        <ul class="skin__types">
-          <li>Dry <span>tailored</span></li>
-          <li>Normal <span>tailored</span></li>
-          <li>Oily <span>tailored</span></li>
-          <li>Sensitive <span>tailored</span></li>
-        </ul>
-      </div>
-      <div class="stack-lg" data-sc-in data-sc-stagger="80" style="padding-top:clamp(0rem,8vw,9rem)">
-        <figure class="skin__fig" data-sc-reveal="up" data-sc-reveal-at="0.05 0.45">
-          <img src="images/skin-treatment.webp" width="1080" height="607" alt="A treatment mask being brushed onto a client's face" loading="lazy">
-        </figure>
-        <p class="lede">Dr. Polina Aesthetics is a medical aesthetic center that tailors skin, hair and body treatments to the individual needs of each client.</p>
-        <p class="prose">We started the practice to create skincare and wellness awareness. Every plan begins with your skin as it is today, so the treatment fits you rather than a routine.</p>
-        <p><a class="textlink" href="about.html">More about the practice</a></p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 3 TENSION: the concerns arrive while the frame holds -->
-  <section class="concerns" data-sc-act="pin" data-sc-span="3.4" data-folio="Concerns">
-    <div data-sc-stage>
-      <figure class="concerns__img" aria-hidden="true"><img src="images/clinic-treatment.webp" alt="" data-sc-parallax="-0.9"></figure>
-      <p class="label concerns__label" style="color:var(--blush)" data-sc-cue="0 0.94 0">What we treat</p>
-      <div class="concerns__words">
-        <p class="concerns__w" data-sc-cue="0 0.2 0">Acne.</p>
-        <p class="concerns__w" data-sc-cue="0.16 0.36">Rosacea.</p>
-        <p class="concerns__w" data-sc-cue="0.32 0.52">Premature ageing.</p>
-        <p class="concerns__w" data-sc-cue="0.48 0.68">Sun damage.<small>And the pigmentation it leaves behind.</small></p>
-        <p class="concerns__w" data-sc-cue="0.64 0.84">Congested pores.<small>Extraction of blackheads, whiteheads and ingrown hairs, then exfoliation of dead skin cells.</small></p>
-        <p class="concerns__w concerns__w--end" data-sc-cue="0.78 1 0.05 0.02">One clinic, one plan, <em>your skin.</em></p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 4 CALM: the clinic itself -->
-  <section class="g-light section" data-folio="The clinics">
-    <div class="wrap clinics">
-      <div class="slides" data-slideshow data-interval="5200" data-sc-reveal="up" data-sc-reveal-at="0.04 0.4" aria-roledescription="carousel" aria-label="Inside the clinic">
-        <figure class="slide"><img src="images/clinic-shelves.webp" alt="A practitioner at work in the treatment room, shelves of skincare behind her"><figcaption>The treatment room</figcaption></figure>
-        <figure class="slide"><img src="images/clinic-reception.webp" alt="The Dr. Polina Aesthetics reception desk" loading="lazy"><figcaption>Reception</figcaption></figure>
-        <figure class="slide"><img src="images/clinic-room.webp" alt="A practitioner standing beside the treatment trolley" loading="lazy"><figcaption>Prepared for every visit</figcaption></figure>
-        <figure class="slide"><img src="images/clinic-desk.webp" alt="Consultation at the clinic desk" loading="lazy"><figcaption>Every plan starts with a consultation</figcaption></figure>
-        <figure class="slide"><img src="images/portrait-gold.webp" alt="Studio portrait from the Dr. Polina Aesthetics shoot" loading="lazy"><figcaption>Dr. Polina Aesthetics</figcaption></figure>
-      </div>
-      <div class="clinics__copy" data-sc-in data-sc-stagger="70">
-        <h2 class="display d-lg">Two clinics, open six days a week.</h2>
-        <div class="addr">
-          <div><p class="label label--soft">Windhoek</p><p class="display d-sm">No. 4 Feld Street</p><p>Ausspannplatz, Windhoek</p></div>
-          <div><p class="label label--soft">Oshikango</p><p class="display d-sm">Freedom Square, Shop B3</p><p>First floor, opposite Standard Bank</p></div>
-          <div><p class="label label--soft">Hours</p><p class="display d-sm">09:00 to 18:00</p><p>Monday to Saturday. Sunday closed.</p></div>
+      <div class="hero__copy" data-cue="0 0.26">
+        <p class="eyebrow">Welcome to Dr. Polina Aesthetics</p>
+        <h1 class="hero__title">Let&rsquo;s take the <em>complexity</em> out of caring for your skin.</h1>
+        <div class="hero__actions">
+          <a class="pill pill--blush" href="booking.html" data-magnet>Book a consultation</a>
+          <a class="link" href="services.html">See treatments <svg class="arr" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- 5 PEAK: the balance line -->
-  <section class="balance" data-sc-act="pin" data-sc-span="4.2" data-balance data-folio="Facial balancing">
-    <div data-sc-stage>
-      <div class="balance__grid">
-        <div class="balance__copy">
-          <p class="label">New 2026 signature service</p>
-          <h2 class="display d-lg">Facial balancing.</h2>
-          <blockquote>&ldquo;In modern aesthetic medicine, the goal is no longer to change faces, it is to restore balance, structure, and harmony.&rdquo;</blockquote>
-          <ul class="ticks" aria-label="Treatments that may be included">
-            <li><i></i>Botox</li>
-            <li><i></i>Dermal fillers</li>
-            <li><i></i>Thread lifting</li>
-            <li><i></i>Chin enhancement</li>
-            <li><i></i>Smile lines</li>
-            <li><i></i>Under eye correction</li>
-          </ul>
-          <p class="balance__note">All facial balancing treatments are fully customised. Procedures and products are tailored after a detailed medical facial assessment. Not every client requires every treatment.</p>
-          <p style="margin-top:1.6rem"><a class="textlink" href="services.html#balancing">How the assessment works</a></p>
-        </div>
-        <div class="compare">
-          <img src="images/balance-before.webp" width="530" height="900" alt="Side profile before facial balancing" loading="lazy">
-          <img class="compare__after" src="images/balance-after.webp" width="530" height="900" alt="The same side profile after facial balancing" loading="lazy">
-          <span class="compare__tag compare__tag--b">Before</span>
-          <span class="compare__tag compare__tag--a">After</span>
-          <span class="compare__line" aria-hidden="true"></span>
-          <button class="compare__knob" type="button" role="slider" aria-label="Compare before and after" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg>
-          </button>
-        </div>
+      <div class="hero__mid" data-cue="0.32 0.6" aria-hidden="true"><p class="hero__big">Skin. <em>Hair.</em> Body.</p></div>
+
+      <div class="hero__end" data-cue="0.68 1.01">
+        <p class="eyebrow">Skin &middot; Hair &middot; Body</p>
+        <p>A medical aesthetic center in Windhoek and Oshikango, tailoring every treatment to the individual needs of each client.</p>
       </div>
+
+      <div class="hero__meta" data-cue="0 0.2">
+        <span><b>Windhoek</b> &nbsp;No. 4 Feld Street, Ausspannplatz</span>
+        <span class="m-hide"><b>Oshikango</b> &nbsp;Freedom Square, Shop B3</span>
+        <span class="hero__touch"><i aria-hidden="true"></i>Touch the drop</span>
+      </div>
+      <div class="hero__bar" aria-hidden="true"><i></i></div>
     </div>
   </section>
 
-  <!-- 6 APPETITE: the shop slides past -->
-  <section class="shoprail g-light" data-sc-act="pan" data-sc-span="3.4" data-settle data-folio="Shop">
-    <div data-sc-stage>
-      <div class="rail-x" data-sc-pan="0.04">
-        <div class="rail-x__lead">
-          <p class="label label--soft">Visit our shop</p>
-          <h2 class="display d-lg" style="margin-top:1.2rem">Health and beauty, from the comfort of your home.</h2>
-          <p class="prose">Add products to your bag and check out on WhatsApp. Your order arrives at the clinic already written out.</p>
-          <a class="btn btn--ink" href="shop.html">Shop all</a>
+  <!-- 2. Manifesto -->
+  <section class="manifesto" data-theme="light" aria-labelledby="about-h">
+    <div class="manifesto__inner">
+      <p class="eyebrow" id="about-h">About the practice</p>
+      <p class="manifesto__text" data-words>Dr. Polina Aesthetics is a medical aesthetic center that tailors <em>skin, hair and body</em> treatments to the individual needs of each client.</p>
+      <div class="manifesto__foot">
+        <p data-reveal>We started the practice to create skincare and wellness awareness.</p>
+        <div data-reveal style="--d:120ms">
+          <p>All treatments are tailored to address skin concerns depending on the skin type.</p>
+          <div class="types" aria-label="Skin types"><span>Dry</span><span>Normal</span><span>Oily</span><span>Sensitive</span></div>
         </div>
-        <span data-rail-products hidden></span>
-        <div class="rail-x__end">
-          <p class="display d-sm">We have a wide range of cosmetics available in store.</p>
-          <p style="margin-top:1rem"><a class="textlink" href="contact.html">Find the clinics</a></p>
-        </div>
+        <p data-reveal style="--d:240ms"><a class="link" href="about.html">More about us <svg class="arr" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a></p>
       </div>
     </div>
   </section>
 
-  <!-- 7 WARMTH: a client's words, the clinic's community -->
-  <section class="g-dark section" data-folio="Kind words">
-    <div class="wrap">
-      <div class="words">
-        <figure class="quote" data-sc-in data-sc-stagger="80">
-          <p>My favorite place! An amazing &amp; very knowledgeable doctor and super kind receptionists.</p>
-          <footer>
-            <span class="stars" aria-label="Five stars">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7L12 17.3 5.8 20.9l1.6-7L2 9.2l7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7L12 17.3 5.8 20.9l1.6-7L2 9.2l7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7L12 17.3 5.8 20.9l1.6-7L2 9.2l7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7L12 17.3 5.8 20.9l1.6-7L2 9.2l7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7L12 17.3 5.8 20.9l1.6-7L2 9.2l7.1-.6z"/></svg>
-            </span>
-            <span>Shikongo Salamies, Google review</span>
-          </footer>
-        </figure>
-        <figure class="community" data-sc-in>
-          <img src="images/community-aids-day.webp" width="1024" height="1024" alt="Dr. Polina Aesthetics care vouchers for the World AIDS Day commemoration" loading="lazy">
-          <figcaption>Dr. Polina Aesthetics sponsored elderly community members with care vouchers during the World AIDS Day commemoration at the Evangelical Lutheran Church.</figcaption>
-        </figure>
-      </div>
-
-      <div class="ig__head" data-sc-in>
-        <h2 class="display d-md">Explore our Instagram</h2>
-        <a class="textlink" href="https://www.instagram.com/drpolina_aesthetics/" target="_blank" rel="noopener">@drpolina_aesthetics</a>
-      </div>
-      <div class="ig" data-sc-in data-sc-stagger="50">
-        <a href="https://www.instagram.com/drpolina_aesthetics/" target="_blank" rel="noopener" aria-label="Instagram post: consultation at the clinic desk"><img src="images/clinic-desk.webp" alt="" loading="lazy"></a>
-        <a href="https://www.instagram.com/drpolina_aesthetics/" target="_blank" rel="noopener" aria-label="Instagram post: a treatment in progress"><img src="images/clinic-treatment.webp" alt="" loading="lazy"></a>
-        <a href="https://www.instagram.com/drpolina_aesthetics/" target="_blank" rel="noopener" aria-label="Instagram post: the reception desk"><img src="images/clinic-reception.webp" alt="" loading="lazy"></a>
-        <a href="https://www.instagram.com/drpolina_aesthetics/" target="_blank" rel="noopener" aria-label="Instagram post: a community talk"><img src="images/community-talk.webp" alt="" loading="lazy"></a>
-        <a href="https://www.instagram.com/drpolina_aesthetics/" target="_blank" rel="noopener" aria-label="Instagram post: World AIDS Day"><img src="images/community-aids-day.webp" alt="" loading="lazy"></a>
-        <a href="https://www.instagram.com/drpolina_aesthetics/" target="_blank" rel="noopener" aria-label="Instagram post: Lipo Lab"><img src="images/shop/lipo-lab-3.webp" alt="" loading="lazy"></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 8 RESOLVE: an appointment card -->
-  <section class="close g-light" data-sc-act="pin" data-sc-span="1.3" data-folio="Visit us">
-    <div data-sc-stage>
-      <div class="close__inner">
+  <!-- 3. The ring -->
+  <section class="ring" data-ring data-theme="dark" aria-labelledby="ring-h">
+    <div class="ring__stage">
+      <div class="ring__head">
         <div>
-          <h2 class="display d-xl close__title">Your skin, taken care of.</h2>
-          <p class="lede" style="color:var(--sc-ink-soft)">Book a consultation at either clinic. Send a message and the team will confirm your time.</p>
+          <p class="eyebrow eyebrow--blush">What we treat</p>
+          <h2 class="h2" id="ring-h" style="margin-top:16px">Every concern, <em>its own plan.</em></h2>
         </div>
-        <div class="card" data-sc-tilt="5">
-          <div class="card__top"><p class="label" style="color:var(--blush)">Appointment</p><p class="label" style="color:#8f8c92">Dr. Polina Aesthetics</p></div>
-          <dl>
-            <div><dt>Windhoek</dt><dd>No. 4 Feld Street, Ausspannplatz</dd></div>
-            <div><dt>Oshikango</dt><dd>Freedom Square, Shop B3, First Floor<br>Opposite Standard Bank</dd></div>
-            <div><dt>Hours</dt><dd>Monday to Saturday, 09:00 to 18:00. Sunday closed.</dd></div>
-            <div><dt>Call or WhatsApp</dt><dd><a href="tel:+264813688846">+264 81 36 888 46</a></dd></div>
-          </dl>
-          <div class="card__cta">
-            <a class="btn" href="booking.html">Book now</a>
-            <a class="btn btn--ghost" href="https://wa.me/264813688846" target="_blank" rel="noopener">WhatsApp</a>
-          </div>
+        <p>All treatments are tailored to address skin concerns depending on the skin type: dry, normal, oily or sensitive.</p>
+      </div>
+      <div class="ring__view" data-cursor="Drag" tabindex="0" aria-label="Skin concerns we treat. Use the arrow keys to turn.">
+        <div class="ring__track" data-ring-track>
+          <a class="rcard" href="services.html#skin" data-name="Acne"><span class="rcard__img"><img src="images/skin-treatment.webp" alt="" loading="lazy"></span><span class="rcard__no">i</span><span class="rcard__body"><h3>Acne</h3><p>Every treatment is tailored to your skin type.</p></span></a>
+          <a class="rcard" href="services.html#skin" data-name="Rosacea"><span class="rcard__no">ii</span><span class="rcard__body"><h3>Rosacea</h3><p>Dry, normal, oily or sensitive: the plan follows your skin.</p></span></a>
+          <a class="rcard" href="services.html#skin" data-name="Premature ageing"><span class="rcard__no">iii</span><span class="rcard__body"><h3>Premature ageing</h3><p>Skin rejuvenating treatments and facial balancing.</p></span></a>
+          <a class="rcard" href="services.html#skin" data-name="Sun damage"><span class="rcard__img"><img src="images/clinic-treatment.webp" alt="" loading="lazy"></span><span class="rcard__no">iv</span><span class="rcard__body"><h3>Sun damage</h3><p>Addressed as part of a tailored skin plan.</p></span></a>
+          <a class="rcard rcard--blush" href="services.html#skin" data-name="Pigmentation"><span class="rcard__no">v</span><span class="rcard__body"><h3>Pigmentation</h3><p>Careful product selection for melanin rich skin.</p></span></a>
+          <a class="rcard" href="services.html#clearing" data-name="Congested pores"><span class="rcard__no">vi</span><span class="rcard__body"><h3>Congested pores</h3><p>Extraction of congested pores.</p></span></a>
+          <a class="rcard" href="services.html#clearing" data-name="Blackheads"><span class="rcard__img"><img src="images/clinic-shelves.webp" alt="" loading="lazy"></span><span class="rcard__no">vii</span><span class="rcard__body"><h3>Blackheads and whiteheads</h3><p>Cleared by extraction, then exfoliation of dead skin cells.</p></span></a>
+          <a class="rcard" href="services.html#clearing" data-name="Ingrown hairs"><span class="rcard__no">viii</span><span class="rcard__body"><h3>Ingrown hairs</h3><p>Extraction as part of the same visit.</p></span></a>
         </div>
       </div>
-      <footer class="foot">
-        <span>&copy; <span data-year>2026</span> Dr. Polina Aesthetics</span>
-        <nav aria-label="Footer">
-          <a href="services.html">Treatments</a><a href="shop.html">Shop</a><a href="about.html">About</a><a href="contact.html">Contact</a>
-          <a href="https://www.instagram.com/drpolina_aesthetics/" target="_blank" rel="noopener">Instagram</a>
-          <a href="https://www.facebook.com/drp.medspa" target="_blank" rel="noopener">Facebook</a>
-          <a href="https://www.tiktok.com/@drpolina_aesthetics" target="_blank" rel="noopener">TikTok</a>
-        </nav>
-      </footer>
+      <div class="ring__foot">
+        <span class="ring__now" data-ring-now aria-hidden="true">Acne</span>
+        <p>Drag to turn, or keep scrolling.</p>
+        <a class="link" href="services.html">All treatments <svg class="arr" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Facial balancing, the lens -->
+  <section class="balance" id="facial-balancing" data-theme="dark" aria-labelledby="fb-h">
+    <div class="balance__media" data-reveal>
+      <div class="lens" data-lens tabindex="0" data-cursor="Look" role="img" aria-label="Side profile before and after facial balancing. Inside the lens you see the after result. Arrow keys move the lens.">
+        <img src="images/balance-before.webp" alt="" width="530" height="900">
+        <div class="lens__after"><img src="images/balance-after.webp" alt="" width="530" height="900"></div>
+        <span class="lens__ring" aria-hidden="true"></span>
+        <span class="lens__tag">Before</span>
+      </div>
+      <div class="lens__ui"><span>Move the lens to see the after.</span><button class="lens__toggle" type="button" data-lens-toggle aria-pressed="false">Show the full result</button></div>
+    </div>
+    <div class="balance__copy">
+      <p class="eyebrow eyebrow--blush">New 2026 signature service</p>
+      <h2 class="h1" id="fb-h" data-split>Facial<br><em>balancing.</em></h2>
+      <blockquote data-reveal>&ldquo;In modern aesthetic medicine, the goal is no longer to change faces, it is to restore balance, structure, and harmony.&rdquo;</blockquote>
+      <ol class="tlist" data-reveal>
+        <li><b>Botox</b><span>Relaxes the muscle activity behind fine lines.</span></li>
+        <li><b>Dermal fillers</b><span>Restores lost volume, such as the cheeks and mid face.</span></li>
+        <li><b>Thread lifting</b><span>For loss of lift and definition.</span></li>
+        <li><b>Chin enhancement</b><span>Improves chin projection and lower face balance.</span></li>
+        <li><b>Smile lines</b><span>Nasolabial fold correction.</span></li>
+        <li><b>Under eye correction</b><span>Hollows treated with fillers or skin rejuvenating treatments.</span></li>
+      </ol>
+      <p class="balance__note">All facial balancing treatments are fully customised. Procedures and products are tailored after a detailed medical facial assessment. Not every client requires every treatment.</p>
+      <a class="pill" href="services.html#facial-balancing" data-magnet>How the assessment works</a>
+    </div>
+  </section>
+
+  <!-- 5. Clinics -->
+  <section class="clinics" data-theme="light" aria-labelledby="cl-h">
+    <div class="slices" data-slices data-cursor="Next" data-reveal>
+      <img src="images/clinic-room.webp" alt="The treatment room at Dr. Polina Aesthetics" data-cap="The treatment room">
+      <img src="images/clinic-shelves.webp" alt="Standing by the product shelves in the treatment room" data-cap="Prepared for every visit">
+      <img src="images/clinic-reception.webp" alt="The reception desk" data-cap="Reception">
+      <img src="images/clinic-treatment.webp" alt="A treatment in progress" data-cap="In treatment">
+      <img src="images/clinic-desk.webp" alt="Consultation at the desk" data-cap="Every plan starts with a consultation">
+    </div>
+    <div class="clinics__copy">
+      <p class="eyebrow">The clinics</p>
+      <h2 class="h2" id="cl-h" style="margin-top:18px" data-split>Two clinics,<br>open <em>six days</em><br>a week.</h2>
+      <div class="addr" data-reveal>
+        <div><p class="serif">Windhoek</p><p>No. 4 Feld Street, Ausspannplatz, Windhoek</p></div>
+        <div><p class="serif">Oshikango</p><p>Freedom Square, Shop B3, First Floor, opposite Standard Bank</p></div>
+        <div><p class="serif">Hours</p><p>Monday to Saturday, 09:00 to 18:00. Sunday closed.<br><a href="tel:+264813688846">+264 81 36 888 46</a></p></div>
+      </div>
+      <div class="actions">
+        <a class="pill pill--ink" href="contact.html" data-magnet>Find the clinics</a>
+        <a class="link" href="booking.html">Book a visit <svg class="arr" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Shop -->
+  <section class="shopband" data-theme="light" aria-labelledby="sh-h">
+    <div class="band__head">
+      <div>
+        <p class="eyebrow">Visit our shop</p>
+        <h2 class="h2" id="sh-h" style="margin-top:18px" data-split>Health and beauty,<br><em>from home.</em></h2>
+      </div>
+      <p>Buy our health and beauty products from the comfort of your home. Add to your bag and check out on WhatsApp, with your order already written.</p>
+    </div>
+    <div class="pgrid" data-products="teaser"></div>
+    <p style="margin-top:40px"><a class="link" href="shop.html">Shop all products <svg class="arr" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a></p>
+  </section>
+
+  <!-- 7. Words -->
+  <section class="words" data-theme="dark" aria-label="What clients say">
+    <figure class="review" data-spot>
+      <div class="stars" aria-label="Five stars"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l2.1 4.6 5 .5-3.8 3.4 1.1 4.9L8 11.9 3.6 14.4l1.1-4.9L.9 6.1l5-.5z"/></svg><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l2.1 4.6 5 .5-3.8 3.4 1.1 4.9L8 11.9 3.6 14.4l1.1-4.9L.9 6.1l5-.5z"/></svg><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l2.1 4.6 5 .5-3.8 3.4 1.1 4.9L8 11.9 3.6 14.4l1.1-4.9L.9 6.1l5-.5z"/></svg><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l2.1 4.6 5 .5-3.8 3.4 1.1 4.9L8 11.9 3.6 14.4l1.1-4.9L.9 6.1l5-.5z"/></svg><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l2.1 4.6 5 .5-3.8 3.4 1.1 4.9L8 11.9 3.6 14.4l1.1-4.9L.9 6.1l5-.5z"/></svg></div>
+      <blockquote>&ldquo;My favorite place! An amazing &amp; very knowledgeable doctor and super kind receptionists.&rdquo;</blockquote>
+      <figcaption><b>Shikongo Salamies</b> &nbsp;&middot;&nbsp; Google review</figcaption>
+    </figure>
+
+    <div class="community">
+      <div class="tilt" data-tilt="7" data-reveal><div class="tilt__in"><img src="images/community-aids-day.webp" alt="Thank you card from the World AIDS Day commemoration at the Evangelical Lutheran Church" loading="lazy" width="1024" height="1024"></div></div>
+      <div data-reveal style="--d:120ms">
+        <p class="eyebrow eyebrow--blush">Community</p>
+        <h3 class="h2">World <em>AIDS Day.</em></h3>
+        <p>Dr. Polina Aesthetics sponsored elderly community members with care vouchers during the World AIDS Day commemoration at the Evangelical Lutheran Church.</p>
+        <a class="link" href="https://www.instagram.com/drpolina_aesthetics/" target="_blank" rel="noopener">Follow @drpolina_aesthetics <svg class="arr" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Consultation card -->
+  <section class="consult" id="consult" data-theme="light" aria-labelledby="co-h">
+    <div class="consult__intro">
+      <p class="eyebrow">Book</p>
+      <h2 class="h2" id="co-h" data-split>Your skin,<br><em>taken care of.</em></h2>
+      <p>Choose your clinic, skin type and what you are coming in for. WhatsApp opens with your request written out, and the team confirms your time there.</p>
+      <form class="consult__form" data-consult data-card="apcard" novalidate>
+        <fieldset class="fs"><legend>Clinic</legend><div class="chips">
+          <label class="chip"><input type="radio" name="clinic" value="Windhoek, No. 4 Feld Street, Ausspannplatz" checked><span>Windhoek</span></label>
+          <label class="chip"><input type="radio" name="clinic" value="Oshikango, Freedom Square, Shop B3"><span>Oshikango</span></label>
+        </div></fieldset>
+        <fieldset class="fs"><legend>Skin type</legend><div class="chips">
+          <label class="chip"><input type="radio" name="skin" value="Dry"><span>Dry</span></label>
+          <label class="chip"><input type="radio" name="skin" value="Normal"><span>Normal</span></label>
+          <label class="chip"><input type="radio" name="skin" value="Oily"><span>Oily</span></label>
+          <label class="chip"><input type="radio" name="skin" value="Sensitive"><span>Sensitive</span></label>
+          <label class="chip"><input type="radio" name="skin" value="Not sure"><span>Not sure</span></label>
+        </div></fieldset>
+        <fieldset class="fs"><legend>I am coming in for</legend><div class="chips">
+          <label class="chip"><input type="radio" name="concern" value="Facial assessment for facial balancing"><span>Facial balancing</span></label>
+          <label class="chip"><input type="radio" name="concern" value="Acne"><span>Acne</span></label>
+          <label class="chip"><input type="radio" name="concern" value="Rosacea"><span>Rosacea</span></label>
+          <label class="chip"><input type="radio" name="concern" value="Premature ageing"><span>Premature ageing</span></label>
+          <label class="chip"><input type="radio" name="concern" value="Sun damage and pigmentation"><span>Sun damage and pigmentation</span></label>
+          <label class="chip"><input type="radio" name="concern" value="Extraction and exfoliation"><span>Extraction and exfoliation</span></label>
+          <label class="chip"><input type="radio" name="concern" value="Lip filler"><span>Lip filler</span></label>
+          <label class="chip"><input type="radio" name="concern" value="Hair or body treatment"><span>Hair or body</span></label>
+        </div></fieldset>
+        <div class="field" data-req><label for="c-name">Your name</label><input id="c-name" name="name" autocomplete="name"><span class="field__err">Please add your name.</span></div>
+        <div><button class="pill pill--ink" type="submit" data-magnet><span>Send on WhatsApp</span></button></div>
+        <p class="small soft">Prefer to pick a date and time? <a class="link" href="booking.html">Use the full booking form</a></p>
+      </form>
+    </div>
+    <div class="consult__side">
+      <div class="apcard" data-tilt="6" id="apcard" aria-hidden="true">
+        <div class="apcard__in">
+          <div class="apcard__top"><em>Dr. Polina</em><span>Appointment<br>request</span></div>
+          <dl>
+            <div><dt>Name</dt><dd data-k="name" data-empty="Your name"></dd></div>
+            <div><dt>Clinic</dt><dd data-k="clinic" data-empty="Choose a clinic"></dd></div>
+            <div><dt>Skin type</dt><dd data-k="skin" data-empty="Dry, normal, oily or sensitive"></dd></div>
+            <div><dt>For</dt><dd data-k="concern" data-empty="What brings you in"></dd></div>
+          </dl>
+          <span class="apcard__seal">Skin<br>Hair<br>Body</span>
+          <div class="apcard__foot"><p>Monday to Saturday, 09:00 to 18:00. Payment is due once your booking is approved. Cancel or reschedule at least one day before.</p></div>
+        </div>
+      </div>
     </div>
   </section>
 
 </main>
 
+<footer class="foot" data-theme="dark">
+  <div class="foot__cta">
+    <h2 class="h2" data-split>Book a<br><em>consultation.</em></h2>
+    <div style="display:flex;gap:14px;flex-wrap:wrap">
+      <a class="pill pill--blush" href="booking.html" data-magnet>Book now</a>
+      <a class="pill" href="https://wa.me/264813688846" target="_blank" rel="noopener" data-magnet>WhatsApp</a>
+    </div>
+  </div>
+  <div class="foot__grid">
+    <div><p class="eyebrow">Windhoek</p><p>No. 4 Feld Street<br>Ausspannplatz, Windhoek</p></div>
+    <div><p class="eyebrow">Oshikango</p><p>Freedom Square, Shop B3<br>First Floor, opposite Standard Bank</p></div>
+    <div><p class="eyebrow">Hours</p><p>Monday to Saturday<br>09:00 to 18:00. Sunday closed.</p><p style="margin-top:8px"><a href="tel:+264813688846">+264 81 36 888 46</a></p></div>
+    <div><p class="eyebrow">Explore</p><ul><li><a href="services.html">Treatments</a></li><li><a href="shop.html">Shop</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="https://www.instagram.com/drpolina_aesthetics/" target="_blank" rel="noopener">Instagram</a> &middot; <a href="https://www.facebook.com/drp.medspa" target="_blank" rel="noopener">Facebook</a> &middot; <a href="https://www.tiktok.com/@drpolina_aesthetics" target="_blank" rel="noopener">TikTok</a></li></ul></div>
+  </div>
+  <p class="foot__mark" data-mark aria-hidden="true">Dr. Polina</p>
+  <div class="foot__base"><span>&copy; <span data-year>2026</span> Dr. Polina Aesthetics</span><span>Skin &middot; Hair &middot; Body</span></div>
+</footer>
+
 <script src="js/products.js"></script>
-<script src="js/scrollcraft.js"></script>
-<script src="js/site.js"></script>
+<script src="js/app.js"></script>
+<script type="module" src="js/hero.js"></script>
 </body>
 </html>

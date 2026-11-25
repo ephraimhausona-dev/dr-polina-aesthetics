@@ -29,6 +29,7 @@ changes only grammar and world will fail it.
 | Build | Grammar | Nav treatment | Hero device | Act-sequence shape | Close pattern | Signature move | World | Port |
 |---|---|---|---|---|---|---|---|---|
 | dr-polina (2026-11-15) | Clinic consultation (authored: hard black/grey cuts, no drift, multi-page) | Margin rail: vertical wordmark, menu, live folio; difference blended; bar on phones | Layered pin: giant name behind a real cutout portrait, two photo frames at different rates | 8 acts: pin, flow, pin, flow+slideshow, pin (peak 4.2vh), pan, flow, pin | Appointment card plate with footer inside the stage | The balance line: scroll sweeps a blush line across a real before and after, ticking six treatments; draggable and keyboard operable | Photographic, client's own photos only | 4500 |
+| dr-polina-v2 (2026-11-25) | Object led editorial (one 3D object opens, then magazine spreads each with its own interaction) | Centred serif masthead, menu left, bag and book right; ink follows section theme; hides on scroll down | WebGL transmission drop in front of a cutout portrait plane, clinic photos as 3D planes; scroll dollies the camera through them | 9 acts: 3D pin (peak 2.6vh), flow words, 3D ring pin, lens, slices, turntables, spotlight, card builder, name | Appointment card that fills in from chips and sends to WhatsApp (shares the card idea with dr-polina) | Touchable serum drop: dents under the cursor, ripples on click, refracts her portrait | Photographic plus rendered glass | 4500 |
 
 ---
 
@@ -42,7 +43,10 @@ as a constraint, so writing them down is the whole point.
 - Margin rail with a live chapter folio (dr-polina).
 - Name set behind a cutout subject as the hero (dr-polina).
 - Before and after line swept by scroll with ticking checklist (dr-polina).
-- Appointment card close (dr-polina).
+- Appointment card close (dr-polina, dr-polina-v2).
+- WebGL glass object over a photographic plane (dr-polina-v2).
+- Cylinder ring of cards turned by scroll and drag (dr-polina-v2).
+- Cursor lens revealing an after image (dr-polina-v2).
 
 ---
 
